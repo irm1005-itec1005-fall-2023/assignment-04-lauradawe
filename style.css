@@ -74,7 +74,7 @@
   PAGE / BODY
 */
 
-* {
+ {
   outline: 1px solid red;
 }
 
@@ -88,13 +88,24 @@ main {
   /* min-height: 100vh; */
   background-color: var(--colour-purple-200);
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   /* align-items: center;; */
 }
 
-#app {
-  
+/* #flex-container {
+  display: flex;
+  flex-direction: column;
 }
+
+@media {
+  min-width: 800px;
+
+  #flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+} */
 
 /* header h2 {
   padding: 1rem;
@@ -107,14 +118,19 @@ main {
 } */
 
 h1 {
-  color: var( --colour-purple-600);
-  margin-bottom: 1rem;
+  color:#fcf9ff;
+  margin: 2rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 1rem;
   font-size: 2rem;
+  background-color: #09097e;
 }
 
 h2 {
-  color: var( --colour-purple-600);
+  color:#7331a9;
   font-size: 1.5rem;
+  text-align: center;
+  
 }
 
 h3 {
@@ -140,15 +156,91 @@ section {
 } */
 
 /*
+ * FORM/LIST ITEMS
+ */
+
+ul.todo-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.form-entry {
+  background-color: var(--colour-purple-200);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 12rem 0;
+
+}
+
+.form-entry form {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 0;
+  color: var(--colour-purple-700);
+  background-color: var(--colour-purple-200);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-entry form label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-results {
+  list-style-type: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin:  0;
+  color: var(--colour-purple-600);
+  background-color: var(--colour-purple-200);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* .form-results#todo-item-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+} */
+
+.form-results li {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0rem;
+  padding: .5rem;
+  gap: .5rem;
+  background-color: var(--colour-purple-200);
+  font-size: .9rem;
+  font-weight: bold;
+  text-align: left;
+  
+  /* text-decoration: line-through; */
+  justify-content: space-evenly;
+
+  text-wrap: nowrap;
+}
+
+
+/* .form-opacity-50 {
+  opacity: 0.5;
+} */
+
+/*
  * BUTTONS
  */
 
-.btn-primary {
+ .btn-primary {
   max-width: 300px;
   margin: auto;
   margin-top: 1rem;
   appearance: none;
-  background-color: var(--colour-purple-700);
+  background-color:#09097e;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
@@ -179,11 +271,7 @@ section {
 
 .btn-primary:hover {
   background-color: #c859ce;
-}
-
-.btn-primary:focus {
-  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
-  outline: none;
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
 }
 
 .mark-done-btn:hover {
@@ -202,9 +290,9 @@ section {
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 800;
-  padding: 5px 5px;
+  padding-bottom: .2rem;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -245,89 +333,6 @@ section {
   white-space: nowrap;
   cursor: default;
 }
-
-.btn-primary:active {
-  background-color: #213a93;
-  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
-}
-
-
-/*
- * LIST ITEMS
- */
-
-ul.todo-list {
-  list-style-type: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-
-.form-entry {
-  background-color: var(--colour-purple-200);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 12rem 0;
-
-}
-
-.form-entry form {
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 0;
-  color: var(--colour-blue-700);
-  background-color: var(--colour-purple-200);
-  display: flex;
-  flex-direction: column;
-}
-
-.form-entry form label {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.form-results {
-  list-style-type: none;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin:  0;
-  color: var(--colour-purple-600);
-  background-color: var(--colour-purple-300);
-
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-/* .form-results#todo-item-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-} */
-
-.form-results li {
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  gap: 1rem;
-  margin: 0rem;
-  padding: 0rem;
-  background-color: var(--colour-purple-200);
-  font-size: .8rem;
-  font-weight: bold;
-  text-align: left;
-  
-  /* text-decoration: line-through; */
-  justify-content: space-evenly;
-
-  text-wrap: nowrap;
-}
-
-
-/* .form-opacity-50 {
-  opacity: 0.5;
-} */
-
 
 
 /****** Screen reader text utility clsas *******/

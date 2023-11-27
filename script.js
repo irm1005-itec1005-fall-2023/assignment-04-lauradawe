@@ -4,7 +4,6 @@
  *
  */
 
-
 //
 // Variables
 //
@@ -117,7 +116,7 @@ function renderData() {
     let tempButton = document.createElement("button");
 
     tempButton.className = "mark-done-btn";
-    tempButton.textContent = "Mark Done!";
+    tempButton.textContent = "☐";
     tempButton.dataset.todoListId = i;
 
     tempListItem.prepend(tempButton);
