@@ -10,7 +10,7 @@
 
 // Constants
 const appID = "app";
-const headingText = "TADA!  ...a magical To Do manager. ✅";
+const headingText = "TADA!  ...a magical To Do manager.";
 
 // DOM Elements
 let appContainer = document.getElementById(appID);
@@ -130,6 +130,7 @@ function renderData() {
     tempListItem.appendChild(tempButton2);
 
     todoList.appendChild(tempListItem);
+  
 
   }
   //console.log(todoItems);
