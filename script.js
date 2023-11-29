@@ -51,6 +51,7 @@ let idCounter = 0;
 let todoForm = document.getElementById("form-todoEntry");
 let todoList = document.getElementById("todo-item-list");
 let todoInput = document.getElementById("todo-input-1");
+let doneList = document.getElementById("todo-done-list");
 let todoClearBtn = document.getElementById("clear-btn");
 
 
@@ -80,12 +81,7 @@ function todoListClickHandler(event){
     console.log("You clicked on a button");
 
     console.log("The data todo id", event.target.dataset.todoListId)
-    if (event.target.className === "delete-btn"){
-      var listIdToRemove = event.target.dataset.todoListId;
-
-      removeToDoItem(todoItems[listIdToRemove].id);
-    }
-    else if (event.target.className === "mark-done-btn"){
+    if (event.target.className === "mark-done-btn"){
       var listIdToMarkDone = event.target.dataset.todoListId;
 
       markToDoItemAsCompleted(todoItems[listIdToMarkDone].id);
@@ -94,8 +90,29 @@ function todoListClickHandler(event){
 
   }
 }
+doneList.addEventListener("click", doneListClickHandler);
 
-todoClearBtn.addEventListener("click", clearButtonClickHandler);
+function doneListClickHandler(event){
+//console.log("click detected!");
+//console.log(event.target.tagName);
+//console.log(event.target);
+//console.log(event.currentTarget);
+
+  if (event.target.tagName === "BUTTON"){
+    console.log("You clicked on a button");
+
+    console.log("The data todo id", event.target.dataset.todoListId)
+
+    if (event.target.tagName === "IMG"){
+    var listIdToRemove = event.target.dataset.todoListId;
+
+    removeToDoItem(todoItems[listIdToRemove].id);
+  }
+
+  renderData();
+
+}
+doneList.addEventListener("click", clearButtonClickHandler);
 
 function clearButtonClickHandler(event){
   clearCompletedTasks();
