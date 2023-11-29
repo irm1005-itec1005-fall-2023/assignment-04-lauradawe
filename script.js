@@ -32,13 +32,13 @@ function inititialise() {
   h1.innerText = headingText;
   appContainer.prepend(h1);
 
-  renderData();
+  //renderData();
 
   // Init complete
   console.log("App successfully initialised");
 }
 
-
+inititialise();
 
 
 // My code starts here
@@ -240,4 +240,3 @@ function clearCompletedTasks() {
 //
 // Inits & Event Listeners
 //
-inititialise();
