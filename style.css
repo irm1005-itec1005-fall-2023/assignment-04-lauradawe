@@ -57,9 +57,9 @@
   PAGE / BODY
 */
 
- {
+/* * {
   outline: 1px solid red;
-}
+} */
 
 body {
   max-width: 1500px;
@@ -87,43 +87,37 @@ main {
 
 }
 
+p {
+color: var(--colour-purple-400);
+text-align: center;
+margin-top: 3rem;
+}
+
 h1 {
-  color:#fcf9ff;
+  color: var(--colour-peppermint);
   margin: 2rem;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   padding: 1rem;
   font-size: 2rem;
-  background-color: #09097e;
+  background-color: var(--colour-purple-400);
+  text-align: center;
+  border-radius: 1rem;
 }
 
 h2 {
   color:#7331a9;
   font-size: 1.5rem;
+  font-weight: 800;
   text-align: center;
   
 }
 
 h3 {
   color: var( --colour-purple-600);
-  font-size: 1rem;
+  font-size: .8rem;
+  text-align: center;
+
 }
-
-/* main > section {
-  border-bottom: 20px solid rgb(24, 81, 141);
-} */
-
-section {
-  padding: rem 0;
-}
-
-/*
- * UTILITIES
- */
-/* .container {
-  max-width: 600px;
-  margin: 0px auto;
-  padding: 0 1rem;
-} */
 
 /*
  * FORM/LIST ITEMS
@@ -136,18 +130,28 @@ ul.todo-list {
 }
 
 
+#app {
+  background-color: var(--colour-purple-200);
+  width: auto;
+  
+  display: block;
+  align-items: normal;
+  min-width: 400px;
+  max-width: 2000px;
+}
+
 .form-entry {
   background-color: var(--colour-purple-200);
   border-radius: 1rem;
   padding: 1rem;
-  margin: 12rem 0;
-
+  margin: 3rem 1rem;
+  align-items: center;
 }
 
 .form-entry form {
   padding: 1rem;
   border-radius: 1rem;
-  margin: 0;
+  margin: auto;
   color: var(--colour-purple-700);
   background-color: var(--colour-purple-200);
   display: flex;
@@ -156,8 +160,40 @@ ul.todo-list {
 
 .form-entry form label {
   font-size: 1.2rem;
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
   font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  width: auto;
+  grid-template-columns: 1fr;
+
+}
+#wand {
+  
+  max-width: 200px;
+  margin: auto;
+  rotate: 45deg;
+}
+
+@media (min-width: 900px) {
+  
+  .grid-container {
+    display: grid;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+  }
+
+  #wand {
+  
+    max-width:400px;
+    margin: auto;
+    rotate: -45deg;
+  }
 }
 
 .form-results {
@@ -167,17 +203,12 @@ ul.todo-list {
   margin:  0;
   color: var(--colour-purple-600);
   background-color: var(--colour-purple-200);
-
+  width: auto;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 
-/* .form-results#todo-item-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-} */
 
 .form-results li {
   display: grid;
@@ -195,7 +226,22 @@ ul.todo-list {
 
   text-wrap: nowrap;
 }
+#todo-done-list li {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0rem;
+  padding: .5rem;
+  gap: .5rem;
+  background-color: var(--colour-purple-200);
+  font-size: .9rem;
+  font-weight: bold;
+  text-align: left;
+  
+  text-decoration: line-through;
+  justify-content: space-evenly;
 
+  text-wrap: nowrap;
+}
 
 /* .form-opacity-50 {
   opacity: 0.5;
@@ -234,10 +280,7 @@ ul.todo-list {
   white-space: nowrap;
 }
 
-.btn-primary:focus:not(:focus-visible):not(.focus-visible) {
-  box-shadow: none;
-  outline: none;
-}
+
 
 .btn-primary:hover {
   background-color: #c859ce;
@@ -279,6 +322,45 @@ ul.todo-list {
   box-shadow: 0 0 5px 5px var(--colour-purple-800);
 }
 .delete-btn {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: auto;
+  appearance: none;
+  background-color: var(--colour-purple-200);
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--colour-purple-700);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 10px;
+  font-weight: 800;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+}
+
+button img {
+  object-fit: cover;
+  margin: 0;
+}
+
+#clear-btn:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
+}
+#clear-btn {
+  max-width: 3rem;
+
   margin: auto;
   appearance: none;
   background-color: var(--colour-purple-200);
