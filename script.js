@@ -10,7 +10,7 @@
 
 // Constants
 const appID = "app";
-const headingText = "TADA!  ...a magical To Do manager.";
+const headingText = "⭐⭐⭐TADA!  ...a magical To Do manager. ⭐⭐⭐";
 
 // DOM Elements
 let appContainer = document.getElementById(appID);
@@ -32,14 +32,13 @@ function inititialise() {
   h1.innerText = headingText;
   appContainer.prepend(h1);
 
+  renderData();
+
   // Init complete
   console.log("App successfully initialised");
 }
 
-//
-// Inits & Event Listeners
-//
-inititialise();
+
 
 
 // My code starts here
@@ -48,9 +47,9 @@ inititialise();
 let todoItems = [];
 let idCounter = 0;
 //let todoListArray = [];
+let todoInput = document.getElementById("todo-input-1");
 let todoForm = document.getElementById("form-todoEntry");
 let todoList = document.getElementById("todo-item-list");
-let todoInput = document.getElementById("todo-input-1");
 let doneList = document.getElementById("todo-done-list");
 let todoClearBtn = document.getElementById("clear-btn");
 
@@ -90,29 +89,8 @@ function todoListClickHandler(event){
 
   }
 }
-doneList.addEventListener("click", doneListClickHandler);
 
-function doneListClickHandler(event){
-//console.log("click detected!");
-//console.log(event.target.tagName);
-//console.log(event.target);
-//console.log(event.currentTarget);
-
-  if (event.target.tagName === "BUTTON"){
-    console.log("You clicked on a button");
-
-    console.log("The data todo id", event.target.dataset.todoListId)
-
-    if (event.target.tagName === "IMG"){
-    var listIdToRemove = event.target.dataset.todoListId;
-
-    removeToDoItem(todoItems[listIdToRemove].id);
-  }
-
-  renderData();
-
-}
-doneList.addEventListener("click", clearButtonClickHandler);
+todoClearBtn.addEventListener("click", clearButtonClickHandler);
 
 function clearButtonClickHandler(event){
   clearCompletedTasks();
@@ -122,37 +100,54 @@ function clearButtonClickHandler(event){
 // Render the data to the page
 function renderData() {
 
-  // Clear the list
-  todoList.innerHTML = "";
+  // Empty state or Clear the todo list
+  if (todoItems.length == 0){
+    todoList.innerHTML = "<h3>Got something to do?  Enter it in the box above.</h3>";
+  }
+  else {
+    todoList.innerHTML = "";
+  }  
 
   for (let i=0; i < todoItems.length ; i++ ){
-    let tempListItem = document.createElement("li");
+    if (todoItems[i].completed === false){
+      let tempListItem = document.createElement("li");
 
-    tempListItem.textContent = todoItems[i].text;
+      tempListItem.textContent = todoItems[i].text;
 
-    let tempButton = document.createElement("button");
+      let tempButton = document.createElement("button");
 
-    tempButton.className = "mark-done-btn";
-    tempButton.textContent = "☐";
-    tempButton.dataset.todoListId = i;
+      tempButton.className = "mark-done-btn";
+      tempButton.textContent = "☐";
+      tempButton.dataset.todoListId = i;
 
-    tempListItem.prepend(tempButton);
+      tempListItem.prepend(tempButton);
 
-    let tempButton2 = document.createElement("button");
 
-    tempButton2.className = "delete-btn";
-    tempButton2.textContent = "Delete!";
-    tempButton2.dataset.todoListId = i;
-
-    tempListItem.appendChild(tempButton2);
-
-    todoList.appendChild(tempListItem);
-  
+      todoList.appendChild(tempListItem);
+    }
 
   }
   //console.log(todoItems);
   //console.log(todoList);
-}
+
+    // Clear the todo list
+    doneList.innerHTML = "";
+  
+    for (let i=0; i < todoItems.length ; i++ ){
+      if (todoItems[i].completed === true){
+        let tempListItem = document.createElement("li");
+  
+        tempListItem.textContent = todoItems[i].text;
+  
+        doneList.appendChild(tempListItem);
+      }
+  
+    }
+    console.log(todoItems);
+    console.log(todoList);
+    console.log(doneList);
+  }
+
 
 /*  ------------------------------
  Todo Array Functions from Assignment 03
@@ -242,5 +237,7 @@ function clearCompletedTasks() {
 }
 
 
-
-
+//
+// Inits & Event Listeners
+//
+inititialise();
