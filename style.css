@@ -51,23 +51,6 @@
   --colour-darker-grey-blue: #0f2634;
   --colour-french-pass: #cae9ff;
   --colour-blue-koi: #5fa8d3;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-blue-200);
-  --header-background-colour: var(--colour-blue-900);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-blue-900);
-  --body-background-colour: var(--colour-blue-200);
-  --body-heading-colour: var(--colour-blue-900);
-
-  /* Header configuration */
-  --header-default-colour: var(--colour-wedgewood);
-  --header-background-colour: var(--colour-wedgewood);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
 }
 
 /*
@@ -79,43 +62,30 @@
 }
 
 body {
+  max-width: 1500px;
+  display: block;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--colour-blue-700);
   background-color: var(--colour-purple-200);
+  min-height: 100vh;
+  background: url("./images/christmas-background-with-pastel-bokeh-lights-stars-design.jpg") center;
+  background-size: cover;
+
 }
 
 main {
-  /* min-height: 100vh; */
+  min-height: 100vh;
+
   background-color: var(--colour-purple-200);
-  display: flex;
-  justify-content: center;
-  /* align-items: center;; */
-}
+  width: auto;
+  align-items: center;
 
-/* #flex-container {
-  display: flex;
-  flex-direction: column;
-}
-
-@media {
-  min-width: 800px;
-
-  #flex-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-} */
-
-/* header h2 {
+  margin: 4rem;
   padding: 1rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  font-size: 1.2rem;
+  border-radius: 35px;
 
-  color: var(--header-heading-colour);
-  background-color: var(--header-background-colour);
-} */
+}
 
 h1 {
   color:#fcf9ff;
