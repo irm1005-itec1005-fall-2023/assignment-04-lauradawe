@@ -41,7 +41,58 @@
   -->
 
   <main>
-    <div id="app"></div>
+    <div id="app">
+
+
+      <div class="form-entry">
+  
+        <img id="wand" src="./images/magic-wand_3425918.png" alt="wand-icon"/>
+  
+        <h2>Let's get something accomplished!!!</h2>
+  
+        <form id="form-todoEntry">
+  
+          <label for="todo-input-1">Enter your to do item description:</label>
+          <input type="text" id="todo-input-1" name="todo-input-1" autocomplete="name" required />
+  
+          <button class="btn-primary" type="submit">Submit To Do Item</button>
+        </form>
+      
+      <div>
+
+        <div class="grid-container">
+          <div class="form-results">
+    
+            <h2>To Do List:</h2>
+    
+            <ul class="todo-list" id="todo-item-list">
+            </ul>
+    
+          </div>
+          
+          <div class="form-results">
+    
+            <h2>Completed To Do's:</h2>
+    
+            <ul class="todo-list" id="todo-done-list">
+            </ul>
+    
+            <h3>Click button to clear all completed todos:</h3>
+    
+            <button id="clear-btn">
+              <img class="png-img" src="images/trash-can-icon-28689.png" alt="logo" />
+            </button>
+    
+          </div>
+    
+    
+        </div>
+
+
+    <p>Have a magical day!!!</p>
+
+
+    </div>
   </main>
 
   <!-- Add JavaScript File -->

@@ -11,34 +11,379 @@
   /* Core colours */
   /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
   --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
+  --colour-peppermint: #daf3d2;
   --colour-aquaisland: #a8dadc;
   --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
+  --colour-cello: #4b7dc3;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
+  --colour-blue-900: #16425b;
+  --colour-blue-800: #2f6690;
+  --colour-blue-700: #3a7ca5;
+  --colour-blue-600: #4e9ab1;
+  --colour-blue-500: #81c3d7;
+  --colour-blue-400: #a7d6e1;
+  --colour-blue-300: #c8e0e9;
+  --colour-blue-200: #d9dcd6;
 
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+  --colour-orange-950: #602203;
+  --colour-orange-900: #a23500;
+  --colour-orange-800: #b84c00;
+  --colour-orange-700: #c95e00;
+  --colour-orange-600: #e76f00;
+  --colour-orange-500: #ff6b35;
+  --colour-orange-400: #ff7f41;
+  --colour-orange-300: #ff9366;
+  --colour-orange-200: #ffb488;
+
+
+  --colour-purple-900: #10002b;
+  --colour-purple-800: #240046;
+  --colour-purple-700: #3c096c;
+  --colour-purple-600: #5a189a;
+  --colour-purple-500: #7b2cbf;
+  --colour-purple-400: #9d4edd;
+  --colour-purple-300: #c77dff;
+  --colour-purple-200: #e0aaff;
+
+  --colour-jagged-ice: #bee9e8;
+  --colour-fountain-blue: #62b6cb;
+  --colour-dark-grey-blue: #183d54;
+  --colour-darker-grey-blue: #0f2634;
+  --colour-french-pass: #cae9ff;
+  --colour-blue-koi: #5fa8d3;
 }
 
 /*
   PAGE / BODY
 */
+
+/* * {
+  outline: 1px solid red;
+} */
+
 body {
+  max-width: 1500px;
+  display: block;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  color: var(--colour-blue-700);
+  background-color: var(--colour-purple-200);
+  min-height: 100vh;
+  background: url("./images/christmas-background-with-pastel-bokeh-lights-stars-design.jpg") center;
+  background-size: cover;
+
 }
 
 main {
   min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
+  background-color: var(--colour-purple-200);
+  width: auto;
   align-items: center;
+
+  margin: 4rem;
+  padding: 1rem;
+  border-radius: 35px;
+
+}
+
+p {
+color: var(--colour-purple-400);
+text-align: center;
+margin-top: 3rem;
+}
+
+h1 {
+  color: var(--colour-peppermint);
+  margin: 2rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: var(--colour-purple-400);
+  text-align: center;
+  border-radius: 1rem;
+}
+
+h2 {
+  color:#7331a9;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  
+}
+
+h3 {
+  color: var( --colour-purple-600);
+  font-size: .8rem;
+  text-align: center;
+
+}
+
+/*
+ * FORM/LIST ITEMS
+ */
+
+ul.todo-list {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+#app {
+  background-color: var(--colour-purple-200);
+  width: auto;
+  
+  display: block;
+  align-items: normal;
+  min-width: 400px;
+  max-width: 2000px;
+}
+
+.form-entry {
+  background-color: var(--colour-purple-200);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 3rem 1rem;
+  align-items: center;
+}
+
+.form-entry form {
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: auto;
+  color: var(--colour-purple-700);
+  background-color: var(--colour-purple-200);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-entry form label {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  width: auto;
+  grid-template-columns: 1fr;
+
+}
+#wand {
+  
+  max-width: 200px;
+  margin: auto;
+  rotate: 45deg;
+}
+
+@media (min-width: 900px) {
+  
+  .grid-container {
+    display: grid;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    justify-content: center;
+  }
+
+  #wand {
+  
+    max-width:400px;
+    margin: auto;
+    rotate: -45deg;
+  }
+}
+
+.form-results {
+  list-style-type: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin:  0;
+  color: var(--colour-purple-600);
+  background-color: var(--colour-purple-200);
+  width: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+
+.form-results li {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0rem;
+  padding: .5rem;
+  gap: .5rem;
+  background-color: var(--colour-purple-200);
+  font-size: .9rem;
+  font-weight: bold;
+  text-align: left;
+  
+  /* text-decoration: line-through; */
+  justify-content: space-evenly;
+
+  text-wrap: nowrap;
+}
+#todo-done-list li {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0rem;
+  padding: .5rem;
+  gap: .5rem;
+  background-color: var(--colour-purple-200);
+  font-size: .9rem;
+  font-weight: bold;
+  text-align: left;
+  
+  text-decoration: line-through;
+  justify-content: space-evenly;
+
+  text-wrap: nowrap;
+}
+
+/* .form-opacity-50 {
+  opacity: 0.5;
+} */
+
+/*
+ * BUTTONS
+ */
+
+ .btn-primary {
+  max-width: 300px;
+  margin: auto;
+  margin-top: 1rem;
+  appearance: none;
+  background-color:#09097e;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: var(--colour-purple-200);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+
+
+.btn-primary:hover {
+  background-color: #c859ce;
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
+}
+
+.mark-done-btn:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
+}
+.mark-done-btn {
+  margin: auto;
+  appearance: none;
+  background-color: var(--colour-purple-200);
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--colour-purple-700);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 20px;
+  font-weight: 800;
+  padding-bottom: .2rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
+}
+.delete-btn {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: auto;
+  appearance: none;
+  background-color: var(--colour-purple-200);
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--colour-purple-700);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 10px;
+  font-weight: 800;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+}
+
+button img {
+  object-fit: cover;
+  margin: 0;
+}
+
+#clear-btn:hover {
+  transform: scale(1.2); 
+  box-shadow: 0 0 5px 5px var(--colour-purple-800);
+}
+#clear-btn {
+  max-width: 3rem;
+
+  margin: auto;
+  appearance: none;
+  background-color: var(--colour-purple-200);
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: var(--colour-purple-700);
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px 5px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
 }
 
 
